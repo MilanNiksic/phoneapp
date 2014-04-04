@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="themes/x.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <title>Hello</title>
+    </head>
+    <body>
+<!-- -->
+<!-- START PAGE -->
+<div data-role="page" id="page1">
+
+    <div data-role="header" data-position="fixed"><h1>Welcome to page 1</h1></div>
+
+    <div data-role="content" class="ui-content">
+        <a href="#page2" data-transition="slide" class="ui-btn ui-icon-search ui-btn-icon-left">Go to page 2</a>
+        <br />
+        <legend>Cache settings:</legend>
+        <input type="checkbox" name="check-choice-a1" id="check-choice-a1" value="on" checked="checked" />
+        <label for="check-choice-a1">Jedan</label>
+        <input type="checkbox" name="check-choice-a1" id="check-choice-b1" value="off"  />
+        <label for="check-choice-b1">Dva</label>
+        <br />
+        <a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Open Panel</a> 
+
+    </div>
+<!-- PANEL KOJI SE POJAVLJUJE NA STRANICI KAD SE KLIKNE VAN NJEGA ON SE ZATVARA -->
+    <div data-role="footer" data-position="fixed"><h1><p>Try to rotate your device!</p></h1></div>
+                <div data-role="panel" id="myPanel"> 
+            <h2>Panel Header</h2>
+            <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+            </div>
+
+</div>
+<!-- SECKOND PAGE -->
+<div data-role="page" id="page2" data-theme="b">
+
+    <div data-role="header" data-position="fixed"><h1>Welcome to page 2</h1></div>
+
+    <div data-role="content" class="ui-content">
+        <a href="#page1" data-transition="flow">Go to page 1</a>
+        <br />
+        <a href="#page3">Click to see dialog</a>
+        <br />
+        <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Don't Click On Me</a>
+
+        <div data-role="popup" id="myPopup" data-position-to="window" >
+          <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right" >Close</a>
+          <p>I said dont click!</p>
+        </div>
+
+    </div>
+
+    <div data-role="footer"  data-position="fixed">~</div>
+</div>
+<!-- DIALOG PAGE ON SECKOND PAGE -->
+<div data-role="page" data-dialog="true" id="page3">
+  <div data-role="main" class="ui-content">
+    <a href="#page1">Page 1</a>
+  </div>
+</div>    
+<script>
+    $(window).on("orientationchange",function(){
+  if(window.orientation == 0) // Portrait
+  {
+    $("p").css({"background-color":"green","font-size":"300%"});
+  }
+  else // Landscape
+  {
+    $("p").css({"background-color":"red","font-size":"200%"});
+  }
+});
+</script>
+
+
+    </body>
+</html>
